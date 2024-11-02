@@ -36,6 +36,18 @@ const Game = sequelize.define('Game', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    slime_row: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    slime_col: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    slime_direction: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     created_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW

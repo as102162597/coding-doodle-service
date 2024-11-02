@@ -43,7 +43,6 @@ router.post('/game/save', async (req, res) => {
     let ret = {
         isSuccess: false,
         isRepeatTitle: false,
-        isRepeatMap: false,
         invalidMap: false,
         message: "none"
     }
@@ -51,8 +50,6 @@ router.post('/game/save', async (req, res) => {
     try {
         if (await hasTitle(req.body.title)) {
             ret.isRepeatTitle = true;
-        } else if (await hasMap(req.body.map)) {
-            ret.isRepeatMap = true;
         } else {
             r = parseInt(req.body.row_cnt);
             c = parseInt(req.body.col_cnt);
@@ -90,10 +87,6 @@ router.post('/game/delete', async (req, res) => {
 
 async function hasTitle(t) {
     return !!(await game.findByTitle(t));
-}
-
-async function hasMap(c) {
-    return !!(await map.findByContent(c));
 }
 
 module.exports = router;
