@@ -1,7 +1,6 @@
 #!/bin/bash
-
-DOCKER_IMAGE="coding-doodle-service"
 DOCKER_PACKAGE_JSON="src/package.json"
+DOCKER_IMAGE=$(grep '"name"' $DOCKER_PACKAGE_JSON | awk -F ': ' '{print $2}' | tr -d '",')
 DOCKER_VERSION=$(grep '"version"' $DOCKER_PACKAGE_JSON | awk -F ': ' '{print $2}' | tr -d '",')
 DOCKER_CONTAINER="coding-doodle-service"
 
