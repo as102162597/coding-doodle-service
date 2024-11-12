@@ -15,8 +15,6 @@ This project is built using [*Express*](https://expressjs.com/) and [*Sequelize*
 
 Get Started
 ===========
-Before starting the project, you should first start the MySQL server and create the `coding_doodle` database.
-
 You can start this project using either of the two methods.
 
 Enter the following commands in order to start the project using the current console.
@@ -28,6 +26,12 @@ Whichever method you choose, make sure to download the project first.
 Then change directory.
 
     cd coding-doodle-service
+
+Before starting the project, you should first start the MySQL server and create the `coding_doodle` database. You can set up this service yourself, or use the bash script provided in this project to create a MySQL Docker container.
+
+    ./mysql-server.sh
+
+If you intend to use your own database, you will need to modify the configuration file `src/config/config.js` of this project.
 
 ## Running Locally
 
