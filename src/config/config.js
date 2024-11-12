@@ -4,7 +4,7 @@ const configurations = {
     default: {
         dbms: {
             dialect:    'mysql',
-            host:       'mysql',
+            host:       'localhost',
             port:       3306,
             username:   'root',
             password:   '0000',
